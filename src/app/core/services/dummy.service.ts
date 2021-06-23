@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, timer } from 'rxjs';
+import { interval, Observable, timer } from 'rxjs';
 import { map, takeWhile, tap } from 'rxjs/operators';
 import { DummyItem } from '../../models/DummyItem';
 
@@ -17,10 +17,11 @@ export class DummyService {
   constructor() { }
 
   getCounter$(countNumber: number): Observable<number> {
-    return timer(1000).pipe(
+    return interval(1000).pipe(
+      tap(v => console.log(v)),
       map(v => v + 1),
       tap(v => this._counterValue = v),
-      takeWhile(v => v === countNumber)
+      takeWhile(v => v <= countNumber)
     )
   }
 

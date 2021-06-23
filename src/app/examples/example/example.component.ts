@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExampleComponent implements OnInit {
 
+  showBox = false;
+
+  col = [ 'test1', 'test2']
   constructor() { }
 
   ngOnInit(): void {
