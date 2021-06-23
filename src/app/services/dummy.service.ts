@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { timer } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { map, takeWhile, tap } from 'rxjs/operators';
 import { DummyItem } from '../models/DummyItem';
 
@@ -9,14 +9,14 @@ import { DummyItem } from '../models/DummyItem';
 export class DummyService {
 
   private _counterValue = 0;
-  private _selectedItem: DummyItem;
+  private _selectedItem: DummyItem | undefined;
   private _items: DummyItem[] = [
     { name: 'first', length: 10 },
     { name: 'second', length: 20 }
   ]
   constructor() { }
 
-  getCounter$(countNumber) {
+  getCounter$(countNumber: number): Observable<number> {
     return timer(1000).pipe(
       map(v => v + 1),
       tap(v => this._counterValue = v),
@@ -24,11 +24,11 @@ export class DummyService {
     )
   }
 
-  findItemByName(name) {
+  findItemByName(name: string): DummyItem | undefined {
     return this._items.find(x => x.name === name);
   }
 
-  selectItemByName(name) {
+  selectItemByName(name: string): void {
     this._selectedItem = this.findItemByName(name);
   }
 }
