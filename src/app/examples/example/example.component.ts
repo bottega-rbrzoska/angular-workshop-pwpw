@@ -12,4 +12,8 @@ export class ExampleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleDelayedClick(ev: MouseEvent) {
+    console.log(ev);
+  }
+
 }
