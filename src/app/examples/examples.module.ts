@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +12,7 @@ import { ExampleComponent } from './example/example.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ExamplesRoutingModule
   ]
 })

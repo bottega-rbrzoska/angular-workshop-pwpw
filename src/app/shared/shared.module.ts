@@ -8,9 +8,12 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ObserversModule } from '@angular/cdk/observers';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ClickerDirective } from './directives/clicker.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ClickerDirective
+  ],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -28,7 +31,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatMenuModule,
     ObserversModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ClickerDirective
   ]
 })
 export class SharedModule {
