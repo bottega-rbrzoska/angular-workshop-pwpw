@@ -13,7 +13,7 @@ import { AdminDashboardComponent } from './containers/admin-dashboard/admin-dash
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule.forRoot()
+    SharedModule
   ]
 })
 export class AdminModule { }

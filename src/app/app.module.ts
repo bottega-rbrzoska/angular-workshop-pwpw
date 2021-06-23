@@ -1,4 +1,3 @@
-import { AdminModule } from './admin/admin.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -25,7 +24,6 @@ import { CounterComponent } from './main/counter/counter.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    AdminModule,
     CoreModule
   ],
   providers: [],

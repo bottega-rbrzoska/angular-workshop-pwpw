@@ -12,7 +12,7 @@ export const factory = () => null;
     ProductsListComponent
   ],
   imports: [
-    SharedModule.forRoot(),
+    SharedModule,
     CommonModule,
     ProductsRoutingModule
   ],
