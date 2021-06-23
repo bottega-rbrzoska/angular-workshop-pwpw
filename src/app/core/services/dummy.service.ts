@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { map, takeWhile, tap } from 'rxjs/operators';
-import { DummyItem } from '../models/DummyItem';
+import { DummyItem } from '../../models/DummyItem';
 
 @Injectable({
   providedIn: 'root'
