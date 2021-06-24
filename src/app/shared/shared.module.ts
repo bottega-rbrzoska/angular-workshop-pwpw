@@ -12,12 +12,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ClickerDirective } from './directives/clicker.directive';
 import { NgIfDirective } from './directives/ng-if.directive';
 import { SelectableDirective } from './directives/selectable.directive';
+import { PaginatorDirective } from './directives/paginator.directive';
 
 @NgModule({
   declarations: [
     ClickerDirective,
     NgIfDirective,
-    SelectableDirective
+    SelectableDirective,
+    PaginatorDirective
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { SelectableDirective } from './directives/selectable.directive';
     ClickerDirective,
     NgIfDirective,
     MatCardModule,
-    SelectableDirective
+    SelectableDirective,
+    PaginatorDirective
   ]
 })
 export class SharedModule {
