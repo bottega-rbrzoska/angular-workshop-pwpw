@@ -24,6 +24,12 @@ export class ProductsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.productItems.forEach(p => p.toggleDescription())
+    })
+  }
+
   toggleAllDescriptions() {
     this.productItems.forEach(p => p.toggleDescription())
   }

@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 
 import { ExamplesRoutingModule } from './examples-routing.module';
 import { ExampleComponent } from './example/example.component';
+import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CustomContainerComponent } from './custom-container/custom-container.component';
 
 
 @NgModule({
   declarations: [
-    ExampleComponent
+    ExampleComponent,
+    CustomInputComponent,
+    CustomContainerComponent
   ],
   imports: [
     CommonModule,

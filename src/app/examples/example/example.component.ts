@@ -10,8 +10,13 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ExampleComponent implements OnInit, AfterViewInit {
 
+  selectables!: QueryList<SelectableDirective>;
   @ViewChild(SelectableDirective) myToggleButton!: SelectableDirective;
-  @ViewChildren(SelectableDirective) selectables!: QueryList<SelectableDirective>;
+  @ViewChildren(SelectableDirective)
+  set selectDirectives(selectables: QueryList<SelectableDirective>) {
+    console.log(selectables.length);
+    this.selectables = selectables
+  };
   @ViewChild('myInput', {static: true}) myInput!: ElementRef;
   showBox = false;
 
@@ -34,7 +39,7 @@ export class ExampleComponent implements OnInit, AfterViewInit {
   }
 
   checkElements() {
-    console.log(this.selectables)
+    console.log(this.selectables.length)
   }
 
 }

@@ -1,5 +1,5 @@
 import { Product } from './../../../models/Product';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'pw-product-item',

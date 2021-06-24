@@ -1,8 +1,17 @@
 
-<input #myInput>
+<pw-custom-input>
+  <input #myInput>
+</pw-custom-input>
+
+<pw-custom-container>
+  <h1>My text</h1>
+  <section>My content</section>
+</pw-custom-container>
+
 <ng-container *pwShowOnlyForRole="'admin'">
 <div class="box"
-pwSelectable="selected" #boxSelector="pwSelectable"></div>
+pwSelectable="selected"
+#boxSelector="pwSelectable"></div>
 <button mat-button (click)="boxSelector.toggleSelection()">Toggle</button>
 <mat-divider></mat-divider>
 </ng-container>
@@ -10,6 +19,7 @@ pwSelectable="selected" #boxSelector="pwSelectable"></div>
 <div class="box"
   *pwNgIf="let el from col dupa 'test'; let newVar = secondProp"
 pwClicker="blue"
+pwSelectable="selected"
 pwClickerBorder="solid 4px green"
 (delayedClick)="handleDelayedClick($event)">
 {{ el }} {{newVar}}</div>
