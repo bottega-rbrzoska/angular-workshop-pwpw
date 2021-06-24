@@ -13,13 +13,15 @@ import { ClickerDirective } from './directives/clicker.directive';
 import { NgIfDirective } from './directives/ng-if.directive';
 import { SelectableDirective } from './directives/selectable.directive';
 import { PaginatorDirective } from './directives/paginator.directive';
+import { ShowOnlyForRoleDirective } from './directives/show-only-for-role.directive';
 
 @NgModule({
   declarations: [
     ClickerDirective,
     NgIfDirective,
     SelectableDirective,
-    PaginatorDirective
+    PaginatorDirective,
+    ShowOnlyForRoleDirective
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { PaginatorDirective } from './directives/paginator.directive';
     NgIfDirective,
     MatCardModule,
     SelectableDirective,
-    PaginatorDirective
+    PaginatorDirective,
+    ShowOnlyForRoleDirective
   ]
 })
 export class SharedModule {

@@ -1,8 +1,9 @@
-
+<ng-container *pwShowOnlyForRole="'admin'">
 <div class="box"
 pwSelectable="selected" #boxSelector="pwSelectable"></div>
 <button mat-button (click)="boxSelector.toggleSelection()">Toggle</button>
 <mat-divider></mat-divider>
+</ng-container>
 
 <div class="box"
   *pwNgIf="let el from col dupa 'test'; let newVar = secondProp"

@@ -1,5 +1,12 @@
 <mat-toolbar class="mat-elevation-z8">
   PWPW Training App
+  <ng-container  *ngIf="(auth$ | async) as auth; else logoutBtn" >
+  <button mat-button (click)="logout()">Logout</button>
+  <span>{{auth.name}}</span>
+  </ng-container>
+  <ng-template #logoutBtn>
+    <button mat-button (click)="login()">Login</button>
+  </ng-template>
 </mat-toolbar>
 
 <mat-sidenav-container>
