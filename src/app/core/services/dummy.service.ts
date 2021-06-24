@@ -18,7 +18,6 @@ export class DummyService {
 
   getCounter$(countNumber: number): Observable<number> {
     return interval(1000).pipe(
-      tap(v => console.log(v)),
       map(v => v + 1),
       tap(v => this._counterValue = v),
       takeWhile(v => v <= countNumber)

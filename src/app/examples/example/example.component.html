@@ -1,3 +1,5 @@
+
+<input #myInput>
 <ng-container *pwShowOnlyForRole="'admin'">
 <div class="box"
 pwSelectable="selected" #boxSelector="pwSelectable"></div>
@@ -11,4 +13,4 @@ pwClicker="blue"
 pwClickerBorder="solid 4px green"
 (delayedClick)="handleDelayedClick($event)">
 {{ el }} {{newVar}}</div>
-<button (click)="showBox = !showBox">Toggle</button>
+<button #btn pwSelectable="selected" (click)="showBox = !showBox; checkElements()">Toggle</button>
