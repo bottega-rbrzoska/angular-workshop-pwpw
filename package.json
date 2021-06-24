@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start:backend": "json-serve db.json",
+    "start": "run-p start:backend start:frontend",
+    "start:frontend": "ng serve",
+    "start:backend": "nodemon --watch \"development/**/*\" --delay 1500ms --exec \"dyson ./development\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -26,6 +27,7 @@
     "rxjs": "~6.6.0",
     "tailwindcss": "^2.1.4",
     "tslib": "^2.1.0",
+    "yup": "^0.32.9",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

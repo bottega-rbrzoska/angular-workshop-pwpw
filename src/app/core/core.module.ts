@@ -16,9 +16,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     SharedModule.forRoot()
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptorService },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptorService, multi: true },
     { provide: CONFIG, useValue: { apiUrl: 'http://localhost:3000', appLanguage: 'en' }, multi: true },
-    { provide: CONFIG, useValue: { apiUrl: 'http://localhost:5000', appLanguage: 'pl'  }, multi: true},
+    { provide: CONFIG, useValue: { apiUrl: 'http://localhost:5000', appLanguage: 'pl'  }, multi: true },
     { provide: 'NowySerwis', useValue: { test: 1}},
     { provide: BaseDummyService, useExisting: DummyService}]
 })

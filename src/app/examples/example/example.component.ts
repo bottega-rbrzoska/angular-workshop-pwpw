@@ -28,7 +28,7 @@ export class ExampleComponent implements OnInit, AfterViewInit {
     private baseDummy: BaseDummyService,
     @Inject('NowySerwis') private dummy2: any,
     @Inject(CONFIG) private config: Config[] ) {
-    console.log(baseDummy)
+    this.baseDummy.getDummies().subscribe((v: any) => console.log(v))
   }
 
   ngOnInit(): void {

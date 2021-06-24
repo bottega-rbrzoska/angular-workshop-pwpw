@@ -79,6 +79,7 @@
               "browserTarget": "pwpw:build:production"
             },
             "development": {
+              "proxyConfig": "proxy.conf.json",
               "browserTarget": "pwpw:build:development"
             }
           },

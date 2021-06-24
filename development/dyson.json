@@ -1,0 +1,10 @@
+{
+  "configDir": "development/mocks",
+  "multiRequest": false,
+  "cache": false,
+  "proxy": true,
+  "proxyHost": "http://localhost",
+  "proxyPort": "3000",
+  "port": 5000,
+  "quiet": false
+}
