@@ -1,3 +1,7 @@
 <div>
-  <pw-product-item class="block mb-3" *ngFor="let product of products" [product]="product"></pw-product-item>
+  <pw-product-item
+  pwSelectable="selected-box"
+  class="block mb-3"
+  *ngFor="let product of products"
+  [product]="product"></pw-product-item>
 </div>

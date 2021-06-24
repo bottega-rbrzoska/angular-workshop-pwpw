@@ -27,7 +27,8 @@ export class NgIfDirective implements OnInit {
     this.counter$.subscribe(v => {
       this.vcr.createEmbeddedView(this.template, {
         $implicit: this.elements[0].toUpperCase(),
-        secondProp: this.dupa
+        secondProp: this.dupa,
+        doSmthg: () => this.doSmthg()
       })
     })
     // this.elements.forEach(el => {
@@ -39,4 +40,7 @@ export class NgIfDirective implements OnInit {
 
   }
 
+  doSmthg() {
+
+  }
 }

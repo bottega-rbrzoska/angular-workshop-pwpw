@@ -11,11 +11,13 @@ import { ObserversModule } from '@angular/cdk/observers';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ClickerDirective } from './directives/clicker.directive';
 import { NgIfDirective } from './directives/ng-if.directive';
+import { SelectableDirective } from './directives/selectable.directive';
 
 @NgModule({
   declarations: [
     ClickerDirective,
-    NgIfDirective
+    NgIfDirective,
+    SelectableDirective
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { NgIfDirective } from './directives/ng-if.directive';
     MatToolbarModule,
     ClickerDirective,
     NgIfDirective,
-    MatCardModule
+    MatCardModule,
+    SelectableDirective
   ]
 })
 export class SharedModule {
