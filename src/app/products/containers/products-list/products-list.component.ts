@@ -1,8 +1,7 @@
 import { SelectableDirective } from './../../../shared/directives/selectable.directive';
 import { ProductItemComponent } from './../../components/product-item/product-item.component';
 import { Product } from './../../../models/Product';
-import { NotificationsService } from './../../../shared/notifications.service';
-import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'pw-products-list',
@@ -19,15 +18,20 @@ export class ProductsListComponent implements OnInit {
     { id: '333', name: 'food prod3', description: 'qweqweqwe', price: 30.99, category: 'food'},
     { id: '444', name: 'food super prod4', description: 'zxczxczxc', price: 0.99, category: 'food'}
   ];
-  constructor(private notifications: NotificationsService) { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.productItems.forEach(p => p.toggleDescription())
-    })
+      this.productItems.forEach(p => p.toggleDescription());
+      this.cdr.detectChanges();
+
+      // alternatywne rozwiazanie dla problemu z ExpressionChangedAfterItHasBeenCheckedError
+      // setTimeout(() => {
+      //   this.productItems.forEach(p => p.toggleDescription());
+      // })
+
   }
 
   toggleAllDescriptions() {

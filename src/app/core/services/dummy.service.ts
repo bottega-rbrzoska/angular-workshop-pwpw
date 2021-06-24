@@ -14,6 +14,7 @@ export class DummyService {
     length: yup.number().required()
   })
   private _counterValue = 0;
+
   private _selectedItem: DummyItem | undefined;
   private _items: DummyItem[] = [
     { name: 'first', length: 10 },
