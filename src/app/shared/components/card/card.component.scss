@@ -1,0 +1,17 @@
+.pw-card {
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 8px 12px 37px -11px;
+  padding: 10px;
+
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content {
+    min-height: 200px;
+  }
+  .actions {
+    border-top: 1px solid blue;
+  }
+}

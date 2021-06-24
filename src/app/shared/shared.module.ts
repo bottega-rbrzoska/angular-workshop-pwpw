@@ -14,6 +14,8 @@ import { NgIfDirective } from './directives/ng-if.directive';
 import { SelectableDirective } from './directives/selectable.directive';
 import { PaginatorDirective } from './directives/paginator.directive';
 import { ShowOnlyForRoleDirective } from './directives/show-only-for-role.directive';
+import { CardComponent } from './components/card/card.component';
+import { PwCardHeaderDirective } from './directives/pw-card-header.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ShowOnlyForRoleDirective } from './directives/show-only-for-role.direct
     NgIfDirective,
     SelectableDirective,
     PaginatorDirective,
-    ShowOnlyForRoleDirective
+    ShowOnlyForRoleDirective,
+    CardComponent,
+    PwCardHeaderDirective
   ],
   imports: [
     CommonModule,
@@ -47,7 +51,9 @@ import { ShowOnlyForRoleDirective } from './directives/show-only-for-role.direct
     MatCardModule,
     SelectableDirective,
     PaginatorDirective,
-    ShowOnlyForRoleDirective
+    ShowOnlyForRoleDirective,
+    CardComponent,
+    PwCardHeaderDirective
   ]
 })
 export class SharedModule {
