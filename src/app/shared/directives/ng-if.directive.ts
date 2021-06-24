@@ -25,7 +25,6 @@ export class NgIfDirective implements OnInit {
 
   ngOnInit() {
     this.counter$.subscribe(v => {
-      console.log(v)
       this.vcr.createEmbeddedView(this.template, {
         $implicit: this.elements[0].toUpperCase(),
         secondProp: this.dupa

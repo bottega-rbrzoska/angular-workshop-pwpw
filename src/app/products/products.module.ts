@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsListComponent } from './containers/products-list/products-list.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 export const factory = () => null;
 
 @NgModule({
   declarations: [
-    ProductsListComponent
+    ProductsListComponent,
+    ProductItemComponent
   ],
   imports: [
     SharedModule,

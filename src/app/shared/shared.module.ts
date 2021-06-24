@@ -3,6 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,7 +25,8 @@ import { NgIfDirective } from './directives/ng-if.directive';
     MatMenuModule,
     ObserversModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
   ],
   exports: [
     MatSidenavModule,
@@ -35,7 +37,8 @@ import { NgIfDirective } from './directives/ng-if.directive';
     MatDividerModule,
     MatToolbarModule,
     ClickerDirective,
-    NgIfDirective
+    NgIfDirective,
+    MatCardModule
   ]
 })
 export class SharedModule {

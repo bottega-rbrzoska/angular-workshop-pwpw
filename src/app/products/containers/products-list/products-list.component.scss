@@ -1,0 +1,14 @@
+pw-product-item {
+  cursor: pointer;
+
+  &.selected-box {
+    background: deepskyblue;
+    box-shadow: 0 6px 12px 1px grey;
+
+    ::ng-deep mat-card {
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+

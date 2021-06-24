@@ -21,7 +21,7 @@
       "dom"
     ],
     "paths": {
-      "@pwtypes/*": ["models/*"]
+      "@pwtypes/*": ["src/app/models/*"]
     }
   },
   "angularCompilerOptions": {
