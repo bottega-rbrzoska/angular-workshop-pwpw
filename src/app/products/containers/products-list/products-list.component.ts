@@ -1,6 +1,8 @@
+import { SelectableDirective } from './../../../shared/directives/selectable.directive';
+import { ProductItemComponent } from './../../components/product-item/product-item.component';
 import { Product } from './../../../models/Product';
 import { NotificationsService } from './../../../shared/notifications.service';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'pw-products-list',
@@ -9,6 +11,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
+  @ViewChildren(ProductItemComponent) productItems!: QueryList<ProductItemComponent>;
+  @ViewChildren(SelectableDirective) selectedProducts!: QueryList<SelectableDirective>;
   products: Product[] = [
     { id: '111', name: 'prod1', description: 'super prod', price: 10.99, category: 'electronics'},
     { id: '222', name: 'el prod2', description: 'asdasdasd', price: 20.99, category: 'electronics'},
@@ -18,6 +22,14 @@ export class ProductsListComponent implements OnInit {
   constructor(private notifications: NotificationsService) { }
 
   ngOnInit(): void {
+  }
+
+  toggleAllDescriptions() {
+    this.productItems.forEach(p => p.toggleDescription())
+  }
+
+  selectAllProducts() {
+    this.selectedProducts.forEach(s => s.select());
   }
 
 }

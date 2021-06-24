@@ -9,9 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductItemComponent implements OnInit {
 
   @Input() product!: Product;
+  showDescription = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleDescription() {
+    this.showDescription =!this.showDescription;
   }
 
 }

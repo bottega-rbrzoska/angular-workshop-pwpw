@@ -21,4 +21,9 @@ export class SelectableDirective {
     }
   }
 
+  select() {
+    this.isSelected = true;
+    this.renderer.addClass(this.el.nativeElement, this.className )
+  }
+
 }

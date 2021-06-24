@@ -1,4 +1,8 @@
 <div>
+  <button mat-raised-button color="warn" (click)="selectAllProducts()">Select All</button>
+  <button mat-raised-button color="primary" (click)="toggleAllDescriptions()">Toggle All Descriptions</button>
+</div>
+<div>
   <pw-product-item
   pwSelectable="selected-box"
   class="block mb-3"

@@ -2,4 +2,7 @@
   <div>
     {{ product.name }}
  </div>
+ <div *ngIf="showDescription">
+   {{ product.description }}
+ </div>
 </mat-card>
