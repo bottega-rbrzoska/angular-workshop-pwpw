@@ -1,8 +1,13 @@
+
+<div class="box"
+pwSelectable="selected" #boxSelector="pwSelectable"></div>
+<button mat-button (click)="boxSelector.toggleSelection()">Toggle</button>
+<mat-divider></mat-divider>
+
 <div class="box"
   *pwNgIf="let el from col dupa 'test'; let newVar = secondProp"
 pwClicker="blue"
 pwClickerBorder="solid 4px green"
 (delayedClick)="handleDelayedClick($event)">
 {{ el }} {{newVar}}</div>
-
 <button (click)="showBox = !showBox">Toggle</button>
