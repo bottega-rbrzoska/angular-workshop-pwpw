@@ -5,6 +5,7 @@ import { SelectableDirective } from './../../shared/directives/selectable.direct
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Inject } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { BaseDummyService } from 'src/app/core/abstract/BaseDummyService.class';
 
 @Component({
   selector: 'pw-example',
@@ -23,8 +24,11 @@ export class ExampleComponent implements OnInit, AfterViewInit {
   showBox = false;
 
   col = [ 'test1', 'test2'];
-  constructor(@Inject('NowySerwis') private dummy2: any, @Inject(CONFIG) private config: Config[] ) {
-    console.log(config)
+  constructor(
+    private baseDummy: BaseDummyService,
+    @Inject('NowySerwis') private dummy2: any,
+    @Inject(CONFIG) private config: Config[] ) {
+    console.log(baseDummy)
   }
 
   ngOnInit(): void {
