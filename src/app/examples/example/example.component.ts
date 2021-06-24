@@ -1,5 +1,8 @@
+import { Config } from './../../models/Config';
+import { CONFIG } from './../../core/injection-tokens';
+import { DummyService } from './../../core/services/dummy.service';
 import { SelectableDirective } from './../../shared/directives/selectable.directive';
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Inject } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
@@ -14,14 +17,15 @@ export class ExampleComponent implements OnInit, AfterViewInit {
   @ViewChild(SelectableDirective) myToggleButton!: SelectableDirective;
   @ViewChildren(SelectableDirective)
   set selectDirectives(selectables: QueryList<SelectableDirective>) {
-    console.log(selectables.length);
     this.selectables = selectables
   };
   @ViewChild('myInput', {static: true}) myInput!: ElementRef;
   showBox = false;
 
   col = [ 'test1', 'test2'];
-  constructor() { }
+  constructor(@Inject('NowySerwis') private dummy2: any, @Inject(CONFIG) private config: Config[] ) {
+    console.log(config)
+  }
 
   ngOnInit(): void {
     fromEvent(this.myInput.nativeElement, 'input').pipe(
