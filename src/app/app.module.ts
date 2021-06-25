@@ -10,6 +10,7 @@ import { HomeComponent } from './main/home/home.component';
 import { AboutComponent } from './main/about/about.component';
 import { ProfileComponent } from './main/profile/profile.component';
 import { CounterComponent } from './main/counter/counter.component';
+import { LazyDynamicExampleComponent } from './lazy-components/lazy-dynamic-example/lazy-dynamic-example.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CounterComponent } from './main/counter/counter.component';
     HomeComponent,
     AboutComponent,
     ProfileComponent,
-    CounterComponent
+    CounterComponent,
+    LazyDynamicExampleComponent
   ],
   imports: [
     BrowserModule,

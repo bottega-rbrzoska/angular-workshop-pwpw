@@ -16,6 +16,8 @@ import { PaginatorDirective } from './directives/paginator.directive';
 import { ShowOnlyForRoleDirective } from './directives/show-only-for-role.directive';
 import { CardComponent } from './components/card/card.component';
 import { PwCardHeaderDirective } from './directives/pw-card-header.directive';
+import { NotificationComponent } from './components/notification/notification.component';
+import { NotificationContainerComponent } from './components/notification-container/notification-container.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PwCardHeaderDirective } from './directives/pw-card-header.directive';
     PaginatorDirective,
     ShowOnlyForRoleDirective,
     CardComponent,
-    PwCardHeaderDirective
+    PwCardHeaderDirective,
+    NotificationComponent,
+    NotificationContainerComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +57,8 @@ import { PwCardHeaderDirective } from './directives/pw-card-header.directive';
     PaginatorDirective,
     ShowOnlyForRoleDirective,
     CardComponent,
-    PwCardHeaderDirective
+    PwCardHeaderDirective,
+    NotificationContainerComponent
   ]
 })
 export class SharedModule {

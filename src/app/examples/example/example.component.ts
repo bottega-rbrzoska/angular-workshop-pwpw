@@ -2,7 +2,7 @@ import { Config } from './../../models/Config';
 import { CONFIG } from './../../core/injection-tokens';
 import { DummyService } from './../../core/services/dummy.service';
 import { SelectableDirective } from './../../shared/directives/selectable.directive';
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList, Inject, ViewEncapsulation } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { BaseDummyService } from 'src/app/core/abstract/BaseDummyService.class';
