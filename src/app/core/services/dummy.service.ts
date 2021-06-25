@@ -1,3 +1,4 @@
+import { debug } from './../../utils/debug-operator';
 import { DummyItem } from './../../models/DummyItem';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -32,8 +33,9 @@ export class DummyService {
 
   getDummies() {
     return this.http.get<DummyItem[]>('/api/dummies').pipe(
+      debug('Dummies response'),
       tap(v => {
-        v.forEach(dummyItem => {
+        v.forEach((dummyItem: DummyItem) => {
           this.dummyItemValidator.validateSync(dummyItem)
         })
       })
