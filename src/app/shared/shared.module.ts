@@ -4,6 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -40,7 +41,8 @@ import { NotificationContainerComponent } from './components/notification-contai
     ObserversModule,
     MatDividerModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatSidenavModule,
@@ -58,7 +60,8 @@ import { NotificationContainerComponent } from './components/notification-contai
     ShowOnlyForRoleDirective,
     CardComponent,
     PwCardHeaderDirective,
-    NotificationContainerComponent
+    NotificationContainerComponent,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule {

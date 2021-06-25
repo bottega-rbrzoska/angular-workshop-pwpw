@@ -1,7 +1,7 @@
 {
   "login": [
-    { "name": "alojzy", "role": "admin" },
-    { "name": "tom", "role": "user" }
+    { "id": "1", "name": "alojzy", "role": "admin" },
+    { "id": "2", "name": "tom", "role": "user" }
   ],
   "dummies" : [
     { "name": "Test1", "length": 5 },

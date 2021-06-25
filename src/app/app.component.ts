@@ -1,3 +1,4 @@
+import { UserStoreService } from './core/stores/user-store.service';
 import { User } from './models/User';
 import { AuthService } from './core/services/auth.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
@@ -11,16 +12,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  auth$: Observable<User | null>
-  constructor(private auth: AuthService){
-    this.auth$ = auth.auth$;
+  user$: Observable<User | null>;
+  pendingLogin$: Observable<boolean>
+  constructor(private auth: AuthService, private userStore: UserStoreService){
+    this.user$ = userStore.currentUser$;
+    this.pendingLogin$ = userStore.pendingLogin$;
+    userStore.usersList$.subscribe()
   }
 
   login() {
-    this.auth.login();
+    this.userStore.logIn();
   }
 
   logout() {
-    this.auth.logout();
+    this.userStore.logout();
   }
 }
