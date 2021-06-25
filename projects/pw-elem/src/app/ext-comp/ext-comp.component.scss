@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+
+  .counter {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
