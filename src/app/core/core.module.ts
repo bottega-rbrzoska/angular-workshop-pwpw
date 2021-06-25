@@ -2,7 +2,7 @@ import { NotificationsModule } from '@pw/my-lib';
 import { LoggerInterceptorService } from './interceptors/logger-interceptor.service';
 import { CONFIG } from './injection-tokens';
 import { DummyService } from './services/dummy.service';
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { BaseDummyService } from './abstract/BaseDummyService.class';
@@ -24,4 +24,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     { provide: 'NowySerwis', useValue: { test: 1}},
     { provide: BaseDummyService, useExisting: DummyService}]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
+    if (parentModule) {
+      throw new Error(
+        'CoreModule is already loaded. Import it in the AppModule only');
+    }
+  }
+ }

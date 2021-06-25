@@ -1,3 +1,4 @@
+import { ExternalComponent } from './main/external/external.component';
 import { NgModule } from '@angular/core';
 import { NoPreloading, PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './main/home/home.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'external', component: ExternalComponent },
   { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path: 'examples', loadChildren: () => import('./examples/examples.module').then(m => m.ExamplesModule) }
