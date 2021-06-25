@@ -21,7 +21,13 @@
       "dom"
     ],
     "paths": {
-      "@pwtypes/*": ["src/app/models/*"]
+      "@pwtypes/*": [
+        "src/app/models/*"
+      ],
+      "@pw/my-lib": [
+        // "dist/my-lib/my-lib",
+        "projects/my-lib/src/public-api"
+      ]
     }
   },
   "angularCompilerOptions": {

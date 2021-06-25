@@ -1,4 +1,4 @@
-import { NotificationsService } from './../../../shared/notifications.service';
+import { NotificationsService } from '../../../../../projects/my-lib/src/lib/notifications.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

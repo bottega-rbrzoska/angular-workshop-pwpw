@@ -1,4 +1,4 @@
-import { Notification } from './../../../models/Notification';
+import { Notification } from './../Notification';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

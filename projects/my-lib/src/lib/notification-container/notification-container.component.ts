@@ -1,7 +1,7 @@
 import { NotificationComponent } from './../notification/notification.component';
-import { Notification } from './../../../models/Notification';
+import { Notification } from '../Notification';
 import { Component, ComponentFactory, ComponentFactoryResolver, ComponentRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { NotificationsService } from '../../notifications.service';
+import { NotificationsService } from '../notifications.service';
 
 @Component({
   selector: 'pw-notification-container',

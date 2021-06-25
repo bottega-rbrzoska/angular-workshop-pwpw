@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { NotificationsService } from 'src/app/shared/notifications.service';
+import { NotificationsService } from '@pw/my-lib';
 
 @Component({
   selector: 'pw-about',

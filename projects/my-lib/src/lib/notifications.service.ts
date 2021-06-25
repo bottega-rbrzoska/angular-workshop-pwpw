@@ -1,5 +1,5 @@
-import { NotificationComponent } from './components/notification/notification.component';
-import { Notification } from './../models/Notification';
+import { NotificationComponent } from './notification/notification.component';
+import { Notification, NOTIFICATION_CONFIG, NotificationConfig } from './Notification';
 import { Injectable, ComponentFactory, ComponentFactoryResolver, Inject, Injector, EmbeddedViewRef, ApplicationRef } from '@angular/core';
 import { Subject } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
@@ -13,6 +13,7 @@ export class NotificationsService {
   notifications$ = this.notificationsSubj.asObservable();
 
   constructor(
+    @Inject(NOTIFICATION_CONFIG) private config: NotificationConfig,
     private injector: Injector,
     @Inject(DOCUMENT) private document: Document,
     cfr: ComponentFactoryResolver,
@@ -31,7 +32,7 @@ export class NotificationsService {
      compRef.instance.notificationData = msg;
      setTimeout(() => {
       compRef.destroy();
-    }, 3000)
+    }, this.config.timeoutDelay)
    }
 
    private createContainer() {

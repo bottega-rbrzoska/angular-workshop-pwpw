@@ -1,4 +1,4 @@
-import { NotificationsService } from './notifications.service';
+import { NotificationsService } from '../../../projects/my-lib/src/lib/notifications.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
@@ -17,8 +17,6 @@ import { PaginatorDirective } from './directives/paginator.directive';
 import { ShowOnlyForRoleDirective } from './directives/show-only-for-role.directive';
 import { CardComponent } from './components/card/card.component';
 import { PwCardHeaderDirective } from './directives/pw-card-header.directive';
-import { NotificationComponent } from './components/notification/notification.component';
-import { NotificationContainerComponent } from './components/notification-container/notification-container.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import { NotificationContainerComponent } from './components/notification-contai
     ShowOnlyForRoleDirective,
     CardComponent,
     PwCardHeaderDirective,
-    NotificationComponent,
-    NotificationContainerComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +56,6 @@ import { NotificationContainerComponent } from './components/notification-contai
     ShowOnlyForRoleDirective,
     CardComponent,
     PwCardHeaderDirective,
-    NotificationContainerComponent,
     MatProgressSpinnerModule
   ]
 })
@@ -68,7 +63,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {
     return {
       ngModule: SharedModule,
-      providers: [NotificationsService]
+      providers: []
     }
   }
 }

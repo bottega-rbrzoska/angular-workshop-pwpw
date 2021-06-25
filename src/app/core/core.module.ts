@@ -1,3 +1,4 @@
+import { NotificationsModule } from '@pw/my-lib';
 import { LoggerInterceptorService } from './interceptors/logger-interceptor.service';
 import { CONFIG } from './injection-tokens';
 import { DummyService } from './services/dummy.service';
@@ -13,7 +14,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    NotificationsModule.forRoot({ timeoutDelay: 5000 })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptorService, multi: true },
